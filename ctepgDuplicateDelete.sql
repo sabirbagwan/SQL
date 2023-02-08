@@ -3,14 +3,7 @@ cte
 AS
 (
 SELECT ctid,
-       row_number() OVER (PARTITION BY "Date",
-                                       "Expiry", 
-						  				"Strike", 
-						  				"Time", 
-						  				"Open",
-						  				"High",
-						  				"Low",
-						  				"Close"
+       row_number() OVER (PARTITION BY "Date", "Expiry", "Strike", "Time", "Open", "High", "Low", "Close"
                           ORDER BY "Date") rn
        FROM bnce
 )
